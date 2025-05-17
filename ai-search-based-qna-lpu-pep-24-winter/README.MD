@@ -1,0 +1,47 @@
+# Steps to run this project
+
+### 1. npm i
+### 2. create .env file and paste all the key and configuration
+### 3. npm run dev or npm run prod
+
+## Note :- Include all the below variable in .env
+
+DEV_PORT = ""
+PROD_PORT = ""   
+
+DEV_MONGODB_URI = ""
+PROD_MONGODB_URI = ""
+
+DEV_JWT_SECRET_KEY = ""
+PROD_JWT_SECRET_KEY = ""
+
+DEV_OPENAI_KEY = ""
+PROD_OPENAI_KEY = ""
+
+DEV_EMBEDDING_MODEL = ""
+PROD_EMBEDDING_MODEL = ""
+
+DEV_MILVUS_ENDPOINT = ""
+PROD_MILVUS_ENDPOINT = ""
+
+DEV_MILVUS_AUTH_KEY = ""
+PROD_MILVUS_AUTH_KEY = ""
+
+DEV_MILVUS_USERNAME = ""
+PROD_MILVUS_USERNAME = ""
+
+DEV_MILVUS_PASSWORD = ""
+PROD_MILVUS_PASSWORD = ""
+
+DEV_CLOUDINARY_CLOUD_NAME = ""
+PROD_CLOUDINARY_CLOUD_NAME = ""
+
+DEV_CLOUDINARY_API_KEY = ""
+PROD_CLOUDINARY_API_KEY = ""
+
+DEV_CLOUDINARY_API_SECRET = ""
+PROD_CLOUDINARY_API_SECRET = ""
+
+DEV_FIRECRAWL_API_KEY = ""
+PROD_FIRECRAWL_API_KEY = ""
+
