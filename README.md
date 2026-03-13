@@ -130,7 +130,7 @@ project-root
 └── package.json
 Installation & Setup
 1 Clone the repository
-git clone https://github.com/your-username/project-name.git
+gh repo clone sanakhan8859/RAG
 cd project-name
 2 Install dependencies
 npm install
