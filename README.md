@@ -1,31 +1,190 @@
-AI Search Backend with Retrieval-Augmented Generation (RAG)
-A production-ready backend application that answers user queries using Retrieval-Augmented Generation (RAG). It retrieves relevant context from a vector database (Milvus) using OpenAI embeddings,
-and passes that context to OpenAI's GPT models to generate accurate, context-aware responses.
+AI Semantic Search using RAG + Vector Database
+Project Overview
 
-🚀 Tech Stack
-Backend: Node.js, Express.js
+This project implements an AI-powered semantic search system using Retrieval Augmented Generation (RAG). The system enables users to ask natural language questions and retrieves relevant information from a knowledge base using vector embeddings and semantic similarity search.
 
-NLP & Embeddings: Python, OpenAI Embeddings (text-embedding-3-small)
+Unlike traditional keyword search, this system understands the meaning and context of queries, allowing more accurate and intelligent responses.
 
-Vector Search: Milvus
+The project demonstrates how modern AI systems combine vector databases, embeddings, and large language models to build real-world AI applications.
 
-Database: MongoDB
+Problem Statement
 
-AI Model: OpenAI GPT (GPT-3.5 / GPT-4 via API)
+Traditional search systems rely on keyword matching, which often fails to understand the semantic meaning of queries.
 
-API Type: RESTful
+Example:
+User query:
 
-Deployment: Render, Netlify (Frontend)
+"How does parking automation work?"
 
-📌 Features
-🔹 Convert long documents into vector embeddings using OpenAI's embedding API
+A keyword search may not find relevant results if the document uses terms like vehicle detection system instead.
 
-🔹 Store and manage document embeddings in Milvus vector database
+To solve this problem, we use semantic search with vector embeddings, allowing the system to find contextually similar information even when exact keywords differ.
 
-🔹 Accept user query → embed it → retrieve relevant document chunks
+Solution
 
-🔹 Inject context into prompt → call OpenAI's GPT model → return AI-generated answer
+This project implements a RAG (Retrieval Augmented Generation) pipeline:
 
-🔹 Clean API design for frontend consumption
+Convert documents into vector embeddings
 
-🔹 Modular backend: text chunking, embedding, vector search, and GPT query are all separated
+Store embeddings in a vector database
+
+Convert user query into embedding
+
+Perform semantic similarity search
+
+Retrieve the most relevant document chunks
+
+Pass retrieved context to an LLM to generate a final answer
+
+This architecture ensures responses are accurate, grounded in data, and context aware.
+
+Key Features
+
+Semantic search using vector embeddings
+
+Retrieval Augmented Generation (RAG)
+
+Natural language question answering
+
+Context-aware response generation
+
+Vector similarity search
+
+Modular backend architecture
+
+Easy to extend for chatbots, recommendation systems, or knowledge assistants
+
+System Architecture
+User Query
+    ↓
+Query Embedding
+    ↓
+Vector Database Search
+    ↓
+Top Relevant Documents
+    ↓
+Context + Query
+    ↓
+LLM Response Generation
+    ↓
+Final Answer to User
+Tech Stack
+Backend
+
+Node.js
+
+Express.js
+
+AI / ML
+
+Embedding Model
+
+Retrieval Augmented Generation (RAG)
+
+Database
+
+Endee Vector Database (for storing embeddings)
+
+Other Tools
+
+GitHub
+
+REST APIs
+
+How Endee Vector Database is Used
+
+This project uses Endee Vector Database as the core retrieval engine.
+
+Endee enables efficient vector similarity search which allows the system to retrieve documents based on semantic meaning rather than keywords.
+
+Steps:
+
+Documents are converted into embeddings.
+
+Embeddings are stored inside the Endee vector database.
+
+User queries are converted into embeddings.
+
+Endee performs nearest neighbor vector search.
+
+Top relevant results are returned to the RAG pipeline.
+
+This allows fast and scalable semantic search across large datasets.
+
+Project Structure
+project-root
+│
+├── backend
+│   ├── server.js
+│   ├── routes
+│   ├── controllers
+│   └── ragPipeline.js
+│
+├── embeddings
+│   └── documentProcessing.js
+│
+├── data
+│   └── knowledge_base.txt
+│
+├── README.md
+└── package.json
+Installation & Setup
+1 Clone the repository
+git clone https://github.com/your-username/project-name.git
+cd project-name
+2 Install dependencies
+npm install
+3 Start the server
+node server.js
+4 Run the application
+
+Once the server starts, users can send queries through API requests.
+
+Example query:
+
+POST /search
+{
+  "query": "How does smart parking work?"
+}
+
+The system will return a context-aware AI generated answer.
+
+Example Workflow
+
+Upload documents to knowledge base
+
+Convert documents to embeddings
+
+Store embeddings in Endee
+
+User sends query
+
+Query converted to embedding
+
+Endee retrieves relevant data
+
+LLM generates final answer
+
+Future Improvements
+
+Web interface for queries
+
+Multi-document ingestion
+
+Streaming responses
+
+Agentic AI workflows
+
+Multi-modal search (text + images)
+
+Conclusion
+
+This project demonstrates how vector databases and RAG pipelines can power modern AI search systems. By combining semantic retrieval with language models, the system provides accurate and context-aware responses.
+
+The architecture can be extended to build AI assistants, research tools, recommendation engines, and enterprise knowledge systems.
+
+Author
+
+Amber Afreen
+
+Software Developer | AI Enthusiast
